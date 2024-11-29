@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global VC Landscape</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Disruptive Capital</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+   
+   <style>
+        /* General Styles */
+        body {
+        margin: 0;
+        font-family: 'Times New Roman';
+        background-color: #ffffff; /* Light gray for a professional backdrop */
+        color: #1d1d1f; /* Subtle dark gray for text */
+        overflow-x: hidden;
+        line-height: 1.6; /* Improve readability */
+    }
+
+    /* Heading 1 Styles */
+    h1 {
+        font-size: 3.5rem; /* Large and bold for emphasis */
+        font-weight: 700;
+        color: #002147; /* McKinsey-style deep navy */
+        text-align: center;
+        margin: 40px 0;
+        letter-spacing: -0.02em; /* Slightly tighten the spacing */
+        line-height: 1.2;
+    }
+
+    /* Heading 2 Styles */
+    h2 {
+        font-size: 3rem; /* Secondary importance */
+        font-weight: 400px; /* Lighter for contrast */
+        color: #121F32; /* Slightly lighter navy for visual hierarchy */
+        text-align: center;
+        margin: 20px 0;
+        letter-spacing: 0; /* Balanced default spacing */
+    }
+
+    /* Heading 3 Styles */
+    h3 {
+        font-size: 1.75rem;
+        font-weight: 500;
+        color: #121F32; /* Even lighter navy */
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    h4 {
+        font-size: 1.75rem;
+        font-weight: 200px;
+        color: #003366; /* Even lighter navy */
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    /* Paragraph Styles */
+    p {
+        font-size: 1.125rem; /* Slightly larger than default for legibility */
+        font-weight: 300; /* Light and airy */
+        color: #333333; /* Neutral gray for body text */
+        max-width: 800px; /* Limit width for readability */
+        margin: 20px auto; /* Center paragraphs */
+        text-align: justify; /* Professional alignment */
+    }
+
+    /* Highlighted Text */
+    .highlight {
+        font-weight: 600;
+        color: #000000; /* Accent blue for key text */
+    }
+
+        /* Map Styles */
+        .map-container {
+            width: 100%;
+            max-width: 1200px;
+            height: 80vh;
+            margin: 20px auto;
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .country {
+            fill: #d3d3d3;
+            stroke: #000000;
+            stroke-width: 0.5px;
+            transition: fill 0.3s;
+        }
+
+        .country[data-included="true"] {
+            fill: #121F32;
+        }
+        
+        .country.highlighted {
+            fill: #1c3669; /* Highlighted color for clicked country */
+            animation: pulse 1.5s infinite;
+        }
+
+        /* Tooltip */
+        .tooltip {
+            position: absolute;
+            background: rgb(255, 255, 255);
+            padding: 10px;
+            border-radius: 0px;
+            box-shadow: 0;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0s;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        /* Animation for Sections */
+        section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease-out;
+            margin: 40px 0;
+        }
+
+        section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Section Styles */
+        .country-section {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        .country-section h2 {
+            font-size: 1.5rem;
+            color: #121F32;
+            margin-bottom: 10px;
+        }
+
+        .country-section p span {
+            font-weight: bold;
+            color: #121F32;
+        }
+
+        .country-section p strong {
+            color: #121F32;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <img src="./images/dclogo.png" alt="Disruptive Capital Logo">
+            <h4>Disruptive Capital</h4>
+        </div>
+        
+        <!-- Hamburger Menu Icon (Visible on Mobile Only) -->
+        <div class="container menu-icon" id="menu-icon" onclick="toggleMenu(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        
+        <!-- Navigation Menu -->
+        <nav class="nav" id="nav-menu">
+            <div class="dropdown-container">
+                <a href="./reports/index.html" class="dropdown">Reports & Insights</a>
+                <div class="dropdown-menu">
+                    <a href="./risingstars.html">Emerging Markets</a>
+                    <a href="./heatmap.html">Established Markets</a>
+                    <a href="./reports/index.html">Access All</a>
+                </div>
+            </div>
+            <a href="./index.html">Home</a>
+            <a href="./about/index.html">About Us</a>
+            <a href="./contact/index.html">Contact</a>
+            <a href="./premium/index.html">Subscribe</a>
+        </nav>
+    </header>
+
+    <!-- Heatmap Section -->
+    <h2>Top Countries - VC Investment Per Capita 2024</h2>
+    <h4>VC investment in 2024 divided by population numbers (World Bank).</h4>
+    <div class="map-container">
+        <svg id="world-map"></svg>
+        <div class="tooltip" id="tooltip"></div>
+    </div>
+
+    <!-- Animated Sections -->
+    <div class="container">
+        <section class="country-section" id="usa">
+            <h2>United States</h2>
+            <p><span>Total VC Investment (2023):</span> <strong>$153.1 billion</strong></p>
+            <p><span>Main Sectors:</span> Technology, healthcare, fintech, and AI.  In recent years, AI alone saw over $25 billion in funding.
+            </p>
+            <p><span>Growth:</span> The U.S. maintains a mature VC ecosystem supported by successful exits such as IPOs and acquisitions, particularly in Silicon Valley. VC funding has grown steadily by 10–15% annually, even amid economic challenges.
+            </p>
+        </div>
+        </section>
+
+        <div class="container">
+        <section class="country-section" id="china">
+            <h2>China</h2>
+            <p><span>Total VC Investment (2023):</span> <strong>$54.7 billion</strong></p>
+            <p><span>Main Sectors:</span> E-commerce, green energy, and AI, with electric vehicle startups receiving $5 billion in funding.
+            </p>
+            <p><span>Growth:</span> Despite economic slowdowns, China remains a major player, with robust government support for innovation and technology startups. The rise of domestic unicorns has further strengthened its ecosystem.
+            </p>
+
+        </div>
+        </section>
+
+        <div class="container">
+        <section class="country-section" id="india">
+            <h2>India</h2>
+            <p><span>Total VC Investment (2023):</span> <strong>$11.5 billion</strong></p>
+            <p><span>Main Sectors:</span>Fintech, e-commerce, and edtech. Fintech companies like Razorpay saw investments exceeding $1 billion.
+            </p>
+            <p><span>Growth:</span>  India’s VC activity has doubled since 2018, fueled by its burgeoning digital economy and rising middle class. Its large youth population and internet penetration have made it a hotspot for investors.
+            </p>
+        </div>
+        </section>
+
+        <div class="container">
+        <section class="country-section" id="uk">
+            <h2>United Kingdom</h2>
+            <div class="content">
+                <p><span>Total VC Investment (2023):</span> <strong>$19.7 billion</strong></p>
+                <p><span>Main Sectors:</span>  Fintech, health tech, and AI, with fintech accounting for 40% of investments.
+                </p>
+                <p><span>Growth:</span> Over the last five years, London has established itself as Europe’s financial tech hub, with annual growth rates in VC investments reaching 12%. Government tax incentives and Brexit-driven shifts have also spurred innovation.
+                </p>
+            </div>
+        </div>
+        </section>
+        
+        <div class="container">
+        <section class="country-section" id="france">
+            <h2>France</h2>
+            <div class="content">
+                <p><span>Total VC Investment (2023):</span> <strong>$9.4 billion</strong></p>
+                <p><span>Main Sectors:</span> AI, SaaS, and green energy.  Paris startups alone raised $4 billion in 2023.
+                </p>
+                <p><span>Growth:</span>  French government initiatives like "La French Tech" and tax breaks for R&D have significantly boosted VC activity, with yearly funding increasing by over 20% since 2018.
+                </p>
+            </div>
+            </div>
+        </section>
+        
+        <div class="container">
+        <section class="country-section" id="korea">
+            <h2>South Korea</h2>
+            <div class="content">
+                <p><span>Total VC Investment (2023):</span> <strong>$8.9 billion</strong></p>
+                <p><span>Main Sectors:</span> Electronics, gaming, and AI.</p>
+                <p><span>Growth:</span> Government initiatives, including startup subsidies, have led to consistent VC growth of around 10% annually, focusing on tech and content creation.
+                    </p>
+                    </div>
+            </div>
+        </section>
+        
+        <div class="container">
+        <section class="country-section" id="germany">
+            <h2>Germany</h2>
+            <div class="content">
+                <p><span>Total VC Investment (2023):</span> <strong>$8 billion</strong></p>
+                <p><span>Main Sectors:</span> Automotive innovation, deep tech, and green energy, with Berlin leading in software solutions and mobility startups.
+                </p>
+                <p><span>Growth:</span>  Germany’s emphasis on sustainability and advanced manufacturing has led to consistent VC growth of 10–15% per year since 2019.
+                </p>
+                </div>
+            </div>
+        </section>
+        
+        <div class="container">
+        <section class="country-section" id="canada">
+            <h2>Canada</h2>
+            <div class="content">
+                <p><span>Total VC Investment (2023):</span> <strong>$6.7 billion</strong></p>
+                <p><span>Main Sectors:</span> AI, clean energy, and digital health</p>
+                <p><span>Growth:</span> Canada’s tech hubs, particularly in the Toronto-Waterloo Corridor, have experienced rapid growth, with VC funding increasing 18% annually over the past three years.
+                </p>
+            </div>
+            </div>
+        </section>
+
+        <div class="container">
+        
+        <section class="country-section" id="singapore">
+            <h2>Singapore</h2>
+            <div class="content">
+                <p><span>Total VC Investment (2023):</span> <strong>$5.8 billion</strong></p>
+                <p><span>Main Sectors:</span> Fintech and logistics</p>
+                <p><span>Growth:</span>  Singapore’s pro-business policies and strategic location have made it a growing leader in Southeast Asia, with VC activity increasing by 25% since 2020.
+                </p>
+            </div>
+        </div>
+        </section>
+        
+
+        <div class="container">
+        <section class="country-section" id="sweden">
+            <h2>Sweden</h2>
+            <div class="content">
+                <p><span>Total VC Investment (2023):</span> <strong>$5 billion</strong></p>
+                <p><span>Main Sectors:</span> Green energy and tech startups.</p>
+                <p><span>Growth:</span> Sweden continues to attract VC investments due to its strong focus on sustainability and innovation-driven enterprises.
+                </p>
+            </div>
+            </div>
+        </section>
+        
+        <div class="container">
+        <section class="country-section" id="japan">
+            <h2>Japan</h2>
+            <div class="content">
+                <p><span>Total VC Investment (2023):</span> <strong>$4.8 billion</strong></p>
+                <p><span>Main Sectors:</span> Robotics, AI, and health tech</p>
+                <p><span>Growth:</span> Japan's aging population has driven growth in health tech and robotics, with a focus on innovation in automation and AI.
+                </p>
+            </div>
+            </div>
+        </section>
+        
+        <div class="container">
+        <section class="country-section" id="israel">
+            <h2>Israel</h2>
+            <div class="content">
+                <p><span>Total VC Investment (2023):</span> <strong>$4.4 billion</strong></p>
+                <p><span>Main Sectors:</span>  Cybersecurity, AI, and health tech, with cybersecurity attracting $1.2 billion.
+                </p>
+                <p><span>Growth:</span>Known as the "Startup Nation," Israel continues to attract global VC funds due to its strong R&D ecosystem and success stories like Mobileye and Check Point.
+                </p>
+            </div>
+            </div>
+        </section>
+        
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+          <p> 2024 Disruptive Capital. All Rights Reserved.</p>
+          <p> Site Design by <a href="https://www.linkedin.com/in/safiyahs" target="_blank" rel="noopener noreferrer">Safiyah Sheikh</a></p>
+  
+          <a href="terms.html" class="footer-button">Terms and Conditions</a>
+          <a href="cookie.html" class="footer-button">Cookie Policy</a>
+        </div>
+      </footer>
+
+    <script>
+        // Map Interaction
+        const width = document.querySelector(".map-container").offsetWidth;
+        const height = document.querySelector(".map-container").offsetHeight;
+
+        const svg = d3.select("#world-map");
+        const tooltip = document.getElementById("tooltip");
+
+        const vcData = {
+            "Singapore": 507,
+            "USA": 449,
+            "Israel": 301,
+            "Switzerland": 278,
+            "United Arab Emirates": 249,
+            "Sweden": 207,
+            "United Kingdom": 207,
+            "Ireland": 172,
+            "Norway": 171,
+            "Canada": 155,
+            "Estonia": 145,
+            "Denmark": 142,
+            "Netherlands": 130,
+            "Hong Kong": 122,
+            "Finland": 104,
+            "France": 101,
+            "Belgium": 90,
+            "Australia": 86,
+            "Germany": 86,
+            "South Korea": 59
+        };
+
+        const projection = d3.geoMercator()
+            .scale(140)
+            .translate([width / 2, height / 2]);
+
+        const path = d3.geoPath().projection(projection);
+
+        d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")
+            .then((geojson) => {
+                svg.selectAll(".country")
+                    .data(geojson.features)
+                    .enter()
+                    .append("path")
+                    .attr("d", path)
+                    .attr("class", "country")
+                    .attr("data-included", (d) => vcData[d.properties.name] ? "true" : "false") // Mark VC data countries
+                    .attr("fill", (d) => vcData[d.properties.name] ? "#007bff" : "#d3d3d3") // Blue for VC data
+                    .on("mouseover", function (event, d) {
+                        const countryName = d.properties.name;
+                        const vcValue = vcData[countryName] || "No data";
+
+                        tooltip.style.visibility = "visible";
+                        tooltip.style.opacity = 1;
+                        tooltip.style.left = `${event.pageX + 10}px`;
+                        tooltip.style.top = `${event.pageY - 20}px`;
+                        tooltip.innerHTML = `<strong>${countryName}</strong><br>VC Investment: $${vcValue}`;
+                    })
+                    .on("mouseout", () => {
+                        tooltip.style.visibility = "hidden";
+                        tooltip.style.opacity = 0;
+                    })
+                    .on("click", function () {
+                        const isHighlighted = d3.select(this).classed("highlighted");
+
+                        // Remove highlight from all countries
+                        svg.selectAll(".country").classed("highlighted", false);
+
+                        // Toggle the animation
+                        if (!isHighlighted) {
+                            d3.select(this).classed("highlighted", true);
+                        }
+                    });
+            })
+            .catch((error) => console.error("Error loading GeoJSON data:", error));
+
+        // Scroll Animation
+        document.addEventListener("scroll", () => {
+            const sections = document.querySelectorAll("section");
+            sections.forEach((section) => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const triggerPoint = window.innerHeight - section.offsetHeight / 4;
+
+                if (sectionTop < triggerPoint) {
+                    section.classList.add("active");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

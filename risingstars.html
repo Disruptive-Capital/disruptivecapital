@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global VC Landscape</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+   
+    <title>Disruptive Capital</title>
+    <link rel="stylesheet" href="styles.css">
+   
+   <style>
+        
+        /* General Styles */
+        body {
+        margin: 0;
+        font-family: 'Times New Roman';
+        background-color: #ffffff; /* Light gray for a professional backdrop */
+        color: #1d1d1f; /* Subtle dark gray for text */
+        overflow-x: hidden;
+        line-height: 1.6; /* Improve readability */
+    }
+
+    /* Heading 1 Styles */
+    h1 {
+        font-size: 3.5rem; /* Large and bold for emphasis */
+        font-weight: 700;
+        color: #002147; /* McKinsey-style deep navy */
+        text-align: center;
+        margin: 40px 0;
+        letter-spacing: -0.02em; /* Slightly tighten the spacing */
+        line-height: 1.2;
+    }
+
+    /* Heading 2 Styles */
+    h2 {
+        font-size: 3rem; /* Secondary importance */
+        font-weight: 400px; /* Lighter for contrast */
+        color: #121F32; /* Slightly lighter navy for visual hierarchy */
+        text-align: center;
+        margin: 20px 0;
+        letter-spacing: 0; /* Balanced default spacing */
+    }
+
+    /* Heading 3 Styles */
+    h3 {
+        font-size: 1.75rem;
+        font-weight: 500;
+        color: #121F32; /* Even lighter navy */
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    h4 {
+        font-size: 1.75rem;
+        font-weight: 200px;
+        color: #003366; /* Even lighter navy */
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    /* Paragraph Styles */
+    p {
+        font-size: 1.125rem; /* Slightly larger than default for legibility */
+        font-weight: 300; /* Light and airy */
+        color: #333333; /* Neutral gray for body text */
+        max-width: 800px; /* Limit width for readability */
+        margin: 20px auto; /* Center paragraphs */
+        text-align: justify; /* Professional alignment */
+    }
+
+    /* Highlighted Text */
+    .highlight {
+        font-weight: 600;
+        color: #000000; /* Accent blue for key text */
+    }
+
+        /* Map Styles */
+        .map-container {
+            width: 100%;
+            max-width: 1200px;
+            height: 80vh;
+            margin: 20px auto;
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .country {
+            fill: #d3d3d3;
+            stroke: #000000;
+            stroke-width: 0.5px;
+            transition: fill 0.3s;
+        }
+
+        .country[data-included="true"] {
+            fill: #121F32;
+        }
+        
+        .country.highlighted {
+            fill: #1c3669; /* Highlighted color for clicked country */
+            animation: pulse 1.5s infinite;
+        }
+
+        /* Tooltip */
+        .tooltip {
+            position: absolute;
+            background: rgb(255, 255, 255);
+            padding: 10px;
+            border-radius: 0px;
+            box-shadow: 0;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0s;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        /* Animation for Sections */
+        section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease-out;
+            margin: 40px 0;
+        }
+
+        section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+</head>
+<body>
+   
+
+    <header class="header">
+        <div class="logo">
+            <img src="./images/dclogo.png" alt="Disruptive Capital Logo">
+            <h4>Disruptive Capital</h4>
+        </div>
+        
+        <!-- Hamburger Menu Icon (Visible on Mobile Only) -->
+        <div class="container menu-icon" id="menu-icon" onclick="toggleMenu(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        
+        <!-- Navigation Menu -->
+        <nav class="nav" id="nav-menu">
+            <div class="dropdown-container">
+                <a href="./reports/index.html" class="dropdown">Reports & Insights</a>
+                <div class="dropdown-menu">
+                    <a href="./risingstars.html">Emerging Markets</a>
+                    <a href="./heatmap.html">Established Markets</a>
+                    <a href="./reports/index.html">Access All</a>
+                </div>
+            </div>
+            <a href="./index.html">Home</a>
+            <a href="./about/index.html">About Us</a>
+            <a href="./contact/index.html">Contact</a>
+            <a href="./premium/index.html">Subscribe</a>
+        </nav>
+    </header>
+    <!-- Animated Sections -->
+    <div class="container">
+
+        
+        <section>
+            <h2>Rising Stars in Venture Capital</h2>
+            <p>Discover the countries transforming the global VC landscape. These rising stars are home to booming industries and skyrocketing investment opportunities, shaping the future of innovation and entrepreneurship.</p>
+        
+
+            <div class="container">
+                <section>
+            
+                <h3>Brazil</h3>
+                <p><strong>Total VC Investment (2023):</strong> $2.5 billion.</p>
+                <p><strong>Main Sectors:</strong> Fintech and e-commerce, with Nubank receiving $500 million.</p>
+                <p><strong>Growth:</strong> Brazil’s VC funding has tripled since 2018, driven by a young digital-first population and increasing financial inclusion.</p>
+            </div>
+        </section>
+
+
+            <div class="container">
+                <section>
+            
+                <h3>Nigeria</h3>
+                <p><strong>Total VC Investment (2023):</strong> $1.8 billion.</p>
+                <p><strong>Main Sectors:</strong> Fintech and mobile money, with platforms like Flutterwave raising $250 million.</p>
+                <p><strong>Growth:</strong> Nigeria’s tech sector has grown by 30% annually, making it Africa’s largest VC hub.</p>
+            </div>
+        </section>
+
+            <div class="container">
+                <section>
+            
+                <h3>Indonesia</h3>
+                <p><strong>Total VC Investment (2023):</strong> $1.5 billion.</p>
+                <p><strong>Main Sectors:</strong> E-commerce, fintech, and ride-hailing services, with GoTo Group raising $400 million.</p>
+                <p><strong>Growth:</strong> Indonesia has seen consistent VC growth of 20% annually, fueled by a rapidly urbanizing population and mobile penetration.</p>
+                </div>
+        </section>
+
+            <div class="container">
+                <section>
+          
+                <h3>Vietnam</h3>
+                <p><strong>Total VC Investment (2023):</strong> $1.2 billion.</p>
+                <p><strong>Main Sectors:</strong> Fintech, e-commerce, and edtech.</p>
+                <p><strong>Growth:</strong> Government reforms and incentives have driven 25% annual growth in VC funding since 2019.</p>
+            </div>
+        </section>
+
+
+            <div class="container">
+                <section>
+            
+                <h3>Kenya</h3>
+                <p><strong>Total VC Investment (2023):</strong> $1 billion.</p>
+                <p><strong>Main Sectors:</strong> Agritech and fintech, with M-Pesa leading the charge.</p>
+                <p><strong>Growth:</strong> Kenya’s VC market has expanded by over 30% annually, earning it the nickname "Silicon Savannah."</p>
+            </div>
+        </section>
+        
+
+            <div class="container">
+                <section>
+           
+                <h3>Mexico</h3>
+                <p><strong>Total VC Investment (2023):</strong> $900 million.</p>
+                <p><strong>Main Sectors:</strong> Fintech and logistics, with Mexico City startups raising $600 million.</p>
+                <p><strong>Growth:</strong> Mexico’s VC funding has doubled since 2019 due to trade agreements and proximity to the U.S.</p>
+            </div>
+        </section>
+        
+            <div class="container">
+                <section>
+            
+                <h3>Egypt</h3>
+                <p><strong>Total VC Investment (2023):</strong> $800 million.</p>
+                <p><strong>Main Sectors:</strong> E-commerce, health tech, and fintech.</p>
+                <p><strong>Growth:</strong> Egypt’s VC activity has grown by 40% annually, driven by its youthful population and strategic location.</p>
+            </div>
+        </section>
+        
+
+            <div class="container">
+                <section>
+            
+                <h3>South Africa</h3>
+                <p><strong>Total VC Investment (2023):</strong> $750 million.</p>
+                <p><strong>Main Sectors:</strong> Fintech, renewable energy, and health tech.</p>
+                <p><strong>Growth:</strong> South Africa’s startup ecosystem has grown 15% annually, with Cape Town leading innovation.</p>
+            </div>
+        </section>
+
+        
+            <div class="container">
+                <section>
+            
+                <h3>Colombia</h3>
+                <p><strong>Total VC Investment (2023):</strong> $700 million.</p>
+                <p><strong>Main Sectors:</strong> Fintech and agtech.</p>
+                <p><strong>Growth:</strong> VC activity in Colombia has risen by 30% annually, supported by government incentives.</p>
+            </div>
+        </section>
+
+            <div class="container">
+                <section>
+            
+                <h3>Bangladesh</h3>
+                <p><strong>Total VC Investment (2023):</strong> $650 million.</p>
+                <p><strong>Main Sectors:</strong> E-commerce and logistics.</p>
+                <p><strong>Growth:</strong> VC funding in Bangladesh has tripled since 2019, driven by rapid urbanization and digital adoption.</p>
+            </div>
+        </section>
+        
+        <footer class="site-footer">
+            <div class="footer-content">
+              <p> 2024 Disruptive Capital. All Rights Reserved.</p>
+              <p> Site Design by <a href="https://www.linkedin.com/in/safiyahs" target="_blank" rel="noopener noreferrer">Safiyah Sheikh</a></p>
+      
+              <a href="terms.html" class="footer-button">Terms and Conditions</a>
+              <a href="cookie.html" class="footer-button">Cookie Policy</a>
+            </div>
+          </footer>
+
+    <script>
+     
+        // Scroll Animation
+        document.addEventListener("scroll", () => {
+            const sections = document.querySelectorAll("section");
+            sections.forEach((section) => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const triggerPoint = window.innerHeight - section.offsetHeight / 4;
+
+                if (sectionTop < triggerPoint) {
+                    section.classList.add("active");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
