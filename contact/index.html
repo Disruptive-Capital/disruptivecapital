@@ -5,30 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Disruptive Capital</title>
     <link rel="stylesheet" href="../styles.css">
+    <script src="../scripts.js" defer></script>
+
 </head>
 <body>
     <!-- Header -->
     <header class="header">
-        <div class="logo">
-            <div class="logo">
-                <img src="../images/dclogo.png">
+        <nav class="logo">
+            <a href="../index.html"><img src="../images/dclogo.png" alt="Disruptive Capital Logo"></a>
+            <a href="../index.html"><h4>Disruptive Capital</h4></a>
+        </nav>
 
-
-            </div>Disruptive Capital</div>
-            <nav class="nav">
-                <div class="dropdown-container">
-                    <a href="../reports/index.html" class="dropdown">Reports & Insights</a>
-                    <div class="dropdown-menu">
+        
+        <!-- Hamburger Menu Icon (Visible on Mobile Only) -->
+        <div class="menu-icon" id="menu-icon" onclick="toggleMenu(this)">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        
+        <!-- Navigation Menu -->
+        <nav class="nav" id="nav-menu">
+            <div class="dropdown-container">
+                <a href="../reports/index.html" class="dropdown">Reports & Insights</a>
+                <div class="dropdown-menu">
                         <a href="../risingstars.html">Emerging Markets</a>
                         <a href="../heatmap.html">Established Markets</a>
-                        <a href="../reports/index.html">Access All</a>
-                    </div>
+                    <a href="../reports/index.html">Access All</a>
                 </div>
-                <a href="../index.html">Home</a>
-                <a href="../about/index.html">About Us</a>
-                <a href="../contact/index.html">Contact</a>
-                <a href="../premium/index.html">Subscribe</a>
-            </nav>
+            </div>
+            <a href="../index.html">Home</a>
+            <a href="../about/index.html">About Us</a>
+            <a href="../contact/index.html">Contact</a>
+            <a href="../premium/index.html">Subscribe</a>
+        </nav>
     </header>
 
     <!-- Hero Section -->
@@ -72,6 +82,5 @@
         </div>
       </footer>
 
-    <script src="../scripts.js" defer></script>
 </body>
 </html>

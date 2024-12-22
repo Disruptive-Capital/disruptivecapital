@@ -6,22 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reports & Insights | Disruptive Capital</title>
     <link rel="stylesheet" href="../styles.css">
+    <script src="../scripts.js" defer></script>
 </head>
 <body>
     <header class="header">
-        <div class="logo">
-            <img src="../images/dclogo.png" class="logo-image">
-            Disruptive Capital
+      <nav class="logo">
+        <a href="../index.html"><img src="../images/dclogo.png" alt="Disruptive Capital Logo"></a>
+        <a href="../index.html"><h4>Disruptive Capital</h4></a>
+      </nav>
+
+
+      <div class="menu-icon" id="menu-icon" onclick="toggleMenu(this)">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    
+
+      <nav class="nav" id="nav-menu">
+        <div class="dropdown-container">
+            <a href="../reports/index.html" class="dropdown">Reports & Insights</a>
+            <div class="dropdown-menu">
+                <a href="../risingstars.html">Emerging Markets</a>
+                <a href="../heatmap.html">Established Markets</a>
+                <a href="./index.html">Access All</a>
+            </div>
         </div>
-        <nav class="nav">
-          <div class="dropdown-container">
-              <a href="../reports/index.html" class="dropdown">Reports & Insights</a>
-              <div class="dropdown-menu">
-                  <a href="../risingstars.html">Emerging Markets</a>
-                  <a href="../heatmap.html">Established Markets</a>
-                  <a href="./index.html">Access All</a>
-              </div>
-          </div>
           <a href="../index.html">Home</a>
           <a href="../about/index.html">About Us</a>
           <a href="../contact/index.html">Contact</a>
@@ -60,6 +70,15 @@
               </p>
             <a href="../AIInfrastructure.html" class="report-button">Read Report</a>
         </div>
+
+        <div class="report-card">
+          <img src="../images/space.png" alt="Report 5">
+          <h3>Beyond Earth: Opportunities in the Emerging Space Industry</h3>
+          <p>November 2024 |
+            Disruptive Capital Insight Report
+            </p>
+          <a href="../spaceInd.html" class="report-button">Read Report</a>
+      </div>
 
 
             <div class="report-card" data-category="tech">
@@ -146,15 +165,6 @@
     </p>
     <br>
 
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-</head>
-
-</html>
 
   <a href="../risingstars.html" class="button-link">View Rising Stars</a>
 </div>
@@ -163,8 +173,7 @@
 
     
     
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Global Total VC Invested</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
@@ -287,7 +296,6 @@
 
 
 
-    <script src="../scripts.js" defer></script>
 
     
 </body>

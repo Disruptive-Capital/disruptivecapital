@@ -9,7 +9,7 @@
 
         body {
             margin: 0;
-            padding: 0px;
+            padding: 0;
             font-family: 'Roboto', sans-serif;
             background-color: #f9f9f9;
             display: flex;
@@ -20,14 +20,13 @@
         }
 
         h1 {
-            margin: 20px 0;
-            font-size: 1.8rem;
-            font-weight: 200px;
+            margin: 10px 0;
+            font-size: 1.5rem;
             color: #000000;
         }
 
         svg {
-            font-size: 12px;
+            display: block;
         }
 
         .bar {
@@ -51,6 +50,17 @@
         .axis line {
             stroke: #ccc;
         }
+
+        .axis text {
+            white-space: nowrap;
+            overflow: visible;
+        }
+
+        @media (max-width: 480px) {
+            .axis text {
+                font-size: 9px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -72,15 +82,26 @@
             { industry: "Marketing", value: 7.0 }
         ];
 
-        // Set up dimensions and margins
-        const margin = { top: 20, right: 30, bottom: 30, left: 180 };
-        const width = 800 - margin.left - margin.right;
-        const height = 500 - margin.top - margin.bottom;
+        // Dynamically set dimensions based on screen size
+        const screenWidth = window.innerWidth;
+        const screenHeight = window.innerHeight;
 
-        const svg = d3
-            .select("#chart")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
+        const margin = {
+            top: 20,
+            right: 20,
+            bottom: 20,
+            left: 80,
+        };
+
+        const width = screenWidth - margin.left - margin.right; // Use full width minus margins
+        const height = screenHeight; // Use full height of the div
+
+        // Set up SVG with responsive scaling
+        const svg = d3.select("#chart")
+            .attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
+            .attr("preserveAspectRatio", "xMidYMid meet") // Maintain aspect ratio
+            .style("width", "100%") // Take full width of the container
+            .style("height", "100%") // Take full height of the container
             .append("g")
             .attr("transform", `translate(${margin.left},${margin.top})`);
 
@@ -94,7 +115,7 @@
             .scaleBand()
             .domain(data.map(d => d.industry))
             .range([0, height])
-            .padding(0.1);
+            .padding(0.2);
 
         // Create axes
         const xAxis = d3.axisBottom(x).ticks(5).tickFormat(d => `$${d}B`);
@@ -143,17 +164,15 @@
                 d3.select(this).transition().duration(200).attr("fill", "#66b3ff");
             })
             .on("mouseout", function () {
-                d3.select(this).transition().duration(200).attr("fill", "#aec6cf");
+                d3.select(this).transition().duration(200).attr("fill", "#000000");
             })
             .on("click", (event, d) => {
                 alert(`Industry: ${d.industry}\nInvestment: $${d.value}B`);
             });
     </script>
 
-
-
 <div class="source-link">
     Source: <a href="https://dealroom.co/guides/global" target="_blank" rel="noopener noreferrer">View Source</a>
-  </div>
+</div>
 </body>
 </html>

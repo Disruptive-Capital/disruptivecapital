@@ -34,6 +34,13 @@ body {
     background: #ffffff; /* Slightly darker on hover for readability */
     color: white;
 }
+
+.header .menu-icon {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
 .logo {
     display: flex;
     align-items: center;
@@ -387,17 +394,16 @@ body {
     transform: translateY(-3px);
 }
 
-@media (max-width: 768px) {
-    .report-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns */
-        grid-template-rows: auto; /* Adjusts rows dynamically */
-    }
-}
-
 @media (max-width: 480px) {
     .report-grid {
         grid-template-columns: 1fr; /* Single column for small screens */
         grid-template-rows: auto;
+    }
+
+    svg {
+        width: 100%;
+        height: auto;
+        padding-left: 20px; /* Ensure padding for labels */
     }
 }
 
@@ -588,12 +594,6 @@ body {
 }
 
 /* For responsive design */
-@media (max-width: 768px) {
-    .team-card img {
-        width: 120px; /* Reduce size for smaller screens */
-        height: 120px; /* Keep proportions consistent */
-    }
-}
 
 .team-card h3 {
     font-size: 1.2rem;
@@ -1149,19 +1149,6 @@ body {
     height: 100%;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .content-with-graph {
-        flex-direction: column;
-    }
-
-    .graph-container {
-        max-width: 100%;
-        height: 300px;
-    }
-}
-
-
 .animated-list-container {
   width: 80%;
   margin: 0 auto;
@@ -1521,16 +1508,21 @@ a:hover {
 
 /* Hide Hamburger Icon by Default */
 .menu-icon {
-    display: none; /* Hidden by default */
+    display: none;
     flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 18px;
     cursor: pointer;
-    gap: 4px;
-    position: absolute;
-    right: 20px; /* Always far right */
-    top: 20px; /* Aligns to the top */
 }
 
-/* Hamburger Bars */
+.menu-icon div {
+    height: 3px;
+    background-color: #1d1d1f;
+    border-radius: 2px;
+}
+
+/* Hamburger Bars 
 .bar1, .bar2, .bar3 {
     width: 25px;
     height: 3px;
@@ -1538,8 +1530,9 @@ a:hover {
     border-radius: 2px;
     transition: 0.4s;
 }
+    */
 
-/* Animated Transformation */
+/* Animated Transformation 
 .change .bar1 {
     transform: translate(0, 8px) rotate(-45deg);
 }
@@ -1551,6 +1544,7 @@ a:hover {
 .change .bar3 {
     transform: translate(0, -8px) rotate(45deg);
 }
+*/
 
 /* Navigation Menu */
 .nav {
@@ -1578,5 +1572,34 @@ a:hover {
     }
     .nav {
         display: none; /* Hide nav by default on mobile */
+    }
+    .side-label {
+        font-size: 0.8rem; /* Reduce font size */
+        white-space: nowrap; /* Prevent text wrapping */
+        text-align: left; /* Align left for better readability */
+    }
+    svg {
+        width: 100%;
+        height: auto;
+        padding-left: 20px; /* Ensure padding for labels */
+    }
+    .report-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        grid-template-rows: auto; /* Adjusts rows dynamically */
+    }
+    .team-card img {
+        width: 120px; /* Reduce size for smaller screens */
+        height: 120px; /* Keep proportions consistent */
+    }
+    .content-with-graph {
+        flex-direction: column;
+    }
+
+    .graph-container {
+        max-width: 100%;
+        height: 300px;
+    }
+    .nav.show {
+        display: flex;
     }
 }

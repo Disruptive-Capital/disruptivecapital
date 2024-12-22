@@ -1,3 +1,6 @@
+const menuIcon = document.getElementById("menu-icon");
+const navMenu = document.getElementById("nav-menu");    
+
 // Fade-in animation on scroll
 document.addEventListener("DOMContentLoaded", () => {
     const fadeInElements = document.querySelectorAll(".fade-in");
@@ -211,16 +214,6 @@ function isInViewport(element) {
     );
 }
 
-// Function to check if an element is in the viewport
-function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-}
 
 // Function to handle scroll event and add the 'visible' class to elements
 function handleScroll() {
@@ -231,6 +224,13 @@ function handleScroll() {
         }
     });
 }
+
+window.addEventListener("load", () => {
+    const savedState = sessionStorage.getItem("menuVisible");
+    if (savedState === "true") {
+        navMenu.classList.add("show");
+    }
+});
 
 // Add scroll event listener
 window.addEventListener('scroll', handleScroll);
