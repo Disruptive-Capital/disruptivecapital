@@ -11,6 +11,31 @@
     <link rel="stylesheet" href="styles.css">
    
    <style>
+        #special-container{
+            max-width: 1024px;
+            margin: 40px auto;
+            margin-top:60px ;
+            padding: 40px;
+            background: #ffffff;
+            border-radius: 1px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        #rising-stars-section {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        /* Fade-in class that will reset opacity and transform */
+        .fade-in {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        }
         
         /* General Styles */
         body {
@@ -177,18 +202,18 @@
     <div class="container">
 
         
-        <section>
+        <section id="rising-stars-section">
             <h2>Rising Stars in Venture Capital</h2>
             <p>Discover the countries transforming the global VC landscape. These rising stars are home to booming industries and skyrocketing investment opportunities, shaping the future of innovation and entrepreneurship.</p>
         
 
-            <div class="container">
-                <section>
-            
-                <h3>Brazil</h3>
-                <p><strong>Total VC Investment (2023):</strong> $2.5 billion.</p>
-                <p><strong>Main Sectors:</strong> Fintech and e-commerce, with Nubank receiving $500 million.</p>
-                <p><strong>Growth:</strong> Brazil’s VC funding has tripled since 2018, driven by a young digital-first population and increasing financial inclusion.</p>
+            <div>
+                <section id="special-container">
+                    <h3>Brazil</h3>
+                    <p><strong>Total VC Investment (2023):</strong> $2.5 billion.</p>
+                    <p><strong>Main Sectors:</strong> Fintech and e-commerce, with Nubank receiving $500 million.</p>
+                    <p><strong>Growth:</strong> Brazil’s VC funding has tripled since 2018, driven by a young digital-first population and increasing financial inclusion.</p>
+                </section>
             </div>
         </section>
 
@@ -310,6 +335,15 @@
                     section.classList.add("active");
                 }
             });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const risingStarsSection = document.getElementById('rising-stars-section');
+            risingStarsSection.classList.add('fade-in');
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+            const risingStarsSection = document.getElementById('special-container');
+            risingStarsSection.classList.add('fade-in');
         });
     </script>
 </body>

@@ -405,6 +405,13 @@ body {
         height: auto;
         padding-left: 20px; /* Ensure padding for labels */
     }
+    .featured-reports {
+        padding: 80px 40px;
+        text-align: center;
+        background: #ffffff;
+        border-top: 1px solid #e5e5e5;
+        grid-template-columns: 1fr;
+    }
 }
 
 
@@ -1559,7 +1566,7 @@ a:hover {
         padding-left: 20px; /* Ensure padding for labels */
     }
     .report-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        grid-template-columns: 1fr; /* 2 columns */
         grid-template-rows: auto; /* Adjusts rows dynamically */
     }
     .team-card img {
@@ -1576,6 +1583,6 @@ a:hover {
     }
     .nav.show {
         display: flex;
-    }
+}
     
 }

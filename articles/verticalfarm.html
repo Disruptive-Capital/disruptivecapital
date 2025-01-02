@@ -78,8 +78,6 @@
       max-width: 1000px;
       margin: 0 auto;
       background: #fff;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      border: none;
       font-family: 'Roboto', sans-serif; /* Body text in Roboto */
     }
 
@@ -173,7 +171,7 @@
       }
       .chart-container {
         height: 300px; /* tablet size */
-        margin: 40px auto 40px; /* ensure bigger bottom margin too */
+        margin: 40px auto 100%; /* ensure bigger bottom margin too */
       }
     }
 
@@ -192,7 +190,7 @@
       }
       .chart-container {
         height: 250px; /* phone size */
-        margin: 40px auto 50px; /* bigger bottom margin on phones */
+        margin: 40px auto 100px; /* bigger bottom margin on phones */
       }
     }
   </style>
@@ -201,7 +199,6 @@
   <!--Header Component-->
   <dc-header></dc-header>
 
-  <div class="container">
     <div class="start">
       <h1 class="main-headline">
         <span class="headline-part">Growing the Future</span>
@@ -484,7 +481,6 @@
         <p><strong>Take the first step—partner with us today.</strong></p>
       </section>
     </main>
-  </div>
 
   <script>
     const ctx = document.getElementById('verticalFarmingGraph').getContext('2d');
