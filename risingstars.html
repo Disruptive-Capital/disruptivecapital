@@ -76,6 +76,15 @@
         margin: 20px 0;
         text-align: center;
     }
+    p1{
+        font-size: 1.125rem; /* Slightly larger than default for legibility */
+        font-weight: 300; /* Light and airy */
+        color: #333333; /* Neutral gray for body text */
+        max-width: 800px; /* Limit width for readability */
+        margin: 40px auto; /* Center paragraphs */
+        text-align: justify; /* Professional alignment */
+    }
+    
 
     h4 {
         font-size: 1.75rem;
@@ -91,7 +100,7 @@
         font-weight: 300; /* Light and airy */
         color: #333333; /* Neutral gray for body text */
         max-width: 800px; /* Limit width for readability */
-        margin: 20px auto; /* Center paragraphs */
+        margin: 25px auto; /* Center paragraphs */
         text-align: justify; /* Professional alignment */
     }
 
@@ -164,6 +173,95 @@
             transform: translateY(0);
         }
 
+    /* Intro Title + Paragraph */
+    .rising-stars-intro {
+      max-width: 900px;
+      margin: 0 auto 50px auto;
+      text-align: center;
+    }
+    .rising-stars-intro h2 {
+      font-size: 2.5rem;
+      color: #121f32;
+      margin-bottom: 20px;
+    }
+    .rising-stars-intro p {
+      font-size: 1.2rem;
+      color: #3a3a3c;
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Two Countries per Row */
+    .country-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* Two columns side by side */
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto 50px auto;
+    }
+
+    /* Single Country Card (Flag + Text) */
+    .country-flag {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 4px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .country-flag:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+    .country-flag img {
+      width: 100%;
+      max-width: 300px; /* Constrain flag width */
+      height: auto;
+      margin-bottom: 20px;
+      border-radius: 4px;
+    }
+    .country-flag h3 {
+      font-size: 1.4rem;
+      color: #121f32;
+      margin-bottom: 10px;
+    }
+    .country-flag p {
+      font-size: 1rem;
+      color: #333333;
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+
+    /* Footer */
+    footer {
+        text-align: center;
+    padding: 30px 20px;
+    background: #f5f5f7;
+    border-top: 1px solid #e0e0e0;
+    font-size: 14px;
+    color: #6e6e73;
+    }
+    footer a {
+      color: #000;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 500;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsiveness */
+    @media (max-width: 768px) {
+      .country-row {
+        grid-template-columns: 1fr; /* Stacks countries vertically on smaller screens */
+      }
+      .country-flag img {
+        max-width: 100%; 
+      }
+    }
+
     </style>
 </head>
 <body>
@@ -199,129 +297,151 @@
         </nav>
     </header>
     <!-- Animated Sections -->
-    <div class="container">
-
-        
-        <section id="rising-stars-section">
-            <h2>Rising Stars in Venture Capital</h2>
-            <p>Discover the countries transforming the global VC landscape. These rising stars are home to booming industries and skyrocketing investment opportunities, shaping the future of innovation and entrepreneurship.</p>
-        
-
-            <div>
-                <section id="special-container">
-                    <h3>Brazil</h3>
-                    <p><strong>Total VC Investment (2023):</strong> $2.5 billion.</p>
-                    <p><strong>Main Sectors:</strong> Fintech and e-commerce, with Nubank receiving $500 million.</p>
-                    <p><strong>Growth:</strong> Brazil’s VC funding has tripled since 2018, driven by a young digital-first population and increasing financial inclusion.</p>
-                </section>
-            </div>
-        </section>
-
-
-            <div class="container">
-                <section>
-            
-                <h3>Nigeria</h3>
-                <p><strong>Total VC Investment (2023):</strong> $1.8 billion.</p>
-                <p><strong>Main Sectors:</strong> Fintech and mobile money, with platforms like Flutterwave raising $250 million.</p>
-                <p><strong>Growth:</strong> Nigeria’s tech sector has grown by 30% annually, making it Africa’s largest VC hub.</p>
-            </div>
-        </section>
-
-            <div class="container">
-                <section>
-            
-                <h3>Indonesia</h3>
-                <p><strong>Total VC Investment (2023):</strong> $1.5 billion.</p>
-                <p><strong>Main Sectors:</strong> E-commerce, fintech, and ride-hailing services, with GoTo Group raising $400 million.</p>
-                <p><strong>Growth:</strong> Indonesia has seen consistent VC growth of 20% annually, fueled by a rapidly urbanizing population and mobile penetration.</p>
-                </div>
-        </section>
-
-            <div class="container">
-                <section>
-          
-                <h3>Vietnam</h3>
-                <p><strong>Total VC Investment (2023):</strong> $1.2 billion.</p>
-                <p><strong>Main Sectors:</strong> Fintech, e-commerce, and edtech.</p>
-                <p><strong>Growth:</strong> Government reforms and incentives have driven 25% annual growth in VC funding since 2019.</p>
-            </div>
-        </section>
-
-
-            <div class="container">
-                <section>
-            
-                <h3>Kenya</h3>
-                <p><strong>Total VC Investment (2023):</strong> $1 billion.</p>
-                <p><strong>Main Sectors:</strong> Agritech and fintech, with M-Pesa leading the charge.</p>
-                <p><strong>Growth:</strong> Kenya’s VC market has expanded by over 30% annually, earning it the nickname "Silicon Savannah."</p>
-            </div>
-        </section>
-        
-
-            <div class="container">
-                <section>
-           
-                <h3>Mexico</h3>
-                <p><strong>Total VC Investment (2023):</strong> $900 million.</p>
-                <p><strong>Main Sectors:</strong> Fintech and logistics, with Mexico City startups raising $600 million.</p>
-                <p><strong>Growth:</strong> Mexico’s VC funding has doubled since 2019 due to trade agreements and proximity to the U.S.</p>
-            </div>
-        </section>
-        
-            <div class="container">
-                <section>
-            
-                <h3>Egypt</h3>
-                <p><strong>Total VC Investment (2023):</strong> $800 million.</p>
-                <p><strong>Main Sectors:</strong> E-commerce, health tech, and fintech.</p>
-                <p><strong>Growth:</strong> Egypt’s VC activity has grown by 40% annually, driven by its youthful population and strategic location.</p>
-            </div>
-        </section>
-        
-
-            <div class="container">
-                <section>
-            
-                <h3>South Africa</h3>
-                <p><strong>Total VC Investment (2023):</strong> $750 million.</p>
-                <p><strong>Main Sectors:</strong> Fintech, renewable energy, and health tech.</p>
-                <p><strong>Growth:</strong> South Africa’s startup ecosystem has grown 15% annually, with Cape Town leading innovation.</p>
-            </div>
-        </section>
-
-        
-            <div class="container">
-                <section>
-            
-                <h3>Colombia</h3>
-                <p><strong>Total VC Investment (2023):</strong> $700 million.</p>
-                <p><strong>Main Sectors:</strong> Fintech and agtech.</p>
-                <p><strong>Growth:</strong> VC activity in Colombia has risen by 30% annually, supported by government incentives.</p>
-            </div>
-        </section>
-
-            <div class="container">
-                <section>
-            
-                <h3>Bangladesh</h3>
-                <p><strong>Total VC Investment (2023):</strong> $650 million.</p>
-                <p><strong>Main Sectors:</strong> E-commerce and logistics.</p>
-                <p><strong>Growth:</strong> VC funding in Bangladesh has tripled since 2019, driven by rapid urbanization and digital adoption.</p>
-            </div>
-        </section>
-        
-        <footer class="site-footer">
-            <div class="footer-content">
-              <p> 2024 Disruptive Capital. All Rights Reserved.</p>
-              <p> Site Design by <a href="https://www.linkedin.com/in/safiyahs" target="_blank" rel="noopener noreferrer">Safiyah Sheikh</a></p>
-      
-              <a href="terms.html" class="footer-button">Terms and Conditions</a>
-              <a href="cookie.html" class="footer-button">Cookie Policy</a>
-            </div>
-          </footer>
-
+    <section class="dotted-bg">
+        <div class="rising-stars-intro">
+          <h2>Rising Stars in Venture Capital</h2>
+          <p1>
+            Discover the countries transforming the global VC landscape. 
+            These rising stars are home to booming industries and skyrocketing 
+            investment opportunities, shaping the future of innovation 
+            and entrepreneurship.
+          </p1>
+        </div>
+    
+        <!-- Brazil + Indonesia -->
+        <div class="country-row">
+          <div class="country-flag">
+            <img src="All Flag Pictures/Brazil.jpg" alt="Brazil Flag" />
+            <h3>Brazil</h3>
+            <p><strong>Total VC Investment (2023):</strong> $2.5 billion.</p>
+            <p><strong>Main Sectors:</strong> Fintech, e-commerce (Nubank: $500 million).</p>
+            <p>
+              <strong>Growth:</strong> Brazil’s VC funding has tripled since 2018, 
+              driven by a young digital-first population and increasing financial inclusion.
+            </p>
+          </div>
+    
+          <div class="country-flag">
+            <img src="All Flag Pictures/Indonesia.jpg" alt="Indonesia Flag" />
+            <h3>Indonesia</h3>
+            <p><strong>Total VC Investment (2023):</strong> $1.5 billion.</p>
+            <p><strong>Main Sectors:</strong> E-commerce, fintech, ride-hailing (GoTo: $400 million).</p>
+            <p>
+              <strong>Growth:</strong> Indonesia has seen consistent VC growth of 
+              20% annually, fueled by a rapidly urbanizing population 
+              and mobile penetration.
+            </p>
+          </div>
+        </div>
+    
+        <!-- Nigeria + Vietnam -->
+        <div class="country-row">
+          <div class="country-flag">
+            <img src="All Flag Pictures/NIgera.png" alt="Nigeria Flag" />
+            <h3>Nigeria</h3>
+            <p><strong>Total VC Investment (2023):</strong> $1.8 billion.</p>
+            <p><strong>Main Sectors:</strong> Fintech, mobile money (Flutterwave: $250 million).</p>
+            <p>
+              <strong>Growth:</strong> Nigeria’s tech sector has grown by 30% annually, 
+              making it Africa’s largest VC hub.
+            </p>
+          </div>
+    
+          <div class="country-flag">
+            <img src="All Flag Pictures/Vietnam.jpg" alt="Vietnam Flag" />
+            <h3>Vietnam</h3>
+            <p><strong>Total VC Investment (2023):</strong> $1.2 billion.</p>
+            <p><strong>Main Sectors:</strong> Fintech, e-commerce, edtech.</p>
+            <p>
+              <strong>Growth:</strong> Government reforms and incentives have driven 
+              25% annual growth in VC funding since 2019.
+            </p>
+          </div>
+        </div>
+    
+        <!-- Kenya + Mexico -->
+        <div class="country-row">
+          <div class="country-flag">
+            <img src="All Flag Pictures/Kenya.jpg" alt="Kenya Flag" />
+            <h3>Kenya</h3>
+            <p><strong>Total VC Investment (2023):</strong> $1 billion.</p>
+            <p><strong>Main Sectors:</strong> Agritech, fintech (M-Pesa leading).</p>
+            <p>
+              <strong>Growth:</strong> Kenya’s VC market has expanded by over 30% annually, 
+              earning it the nickname "Silicon Savannah."
+            </p>
+          </div>
+    
+          <div class="country-flag">
+            <img src="All Flag Pictures/Mexico.jpg" alt="Mexico Flag" />
+            <h3>Mexico</h3>
+            <p><strong>Total VC Investment (2023):</strong> $900 million.</p>
+            <p><strong>Main Sectors:</strong> Fintech, logistics (Mexico City: $600 million).</p>
+            <p>
+              <strong>Growth:</strong> Mexico’s VC funding has doubled since 2019 
+              thanks to trade agreements and proximity to the U.S.
+            </p>
+          </div>
+        </div>
+    
+        <!-- Egypt + South Africa -->
+        <div class="country-row">
+          <div class="country-flag">
+            <img src="All Flag Pictures/Egypt.jpg" alt="Egypt Flag" />
+            <h3>Egypt</h3>
+            <p><strong>Total VC Investment (2023):</strong> $800 million.</p>
+            <p><strong>Main Sectors:</strong> E-commerce, health tech, fintech.</p>
+            <p>
+              <strong>Growth:</strong> Egypt’s VC activity has grown by 40% annually, 
+              driven by its youthful population and strategic location.
+            </p>
+          </div>
+    
+          <div class="country-flag">
+            <img src="All Flag Pictures/South_Africa.png" alt="South Africa Flag" />
+            <h3>South Africa</h3>
+            <p><strong>Total VC Investment (2023):</strong> $750 million.</p>
+            <p><strong>Main Sectors:</strong> Fintech, renewable energy, health tech.</p>
+            <p>
+              <strong>Growth:</strong> South Africa’s startup ecosystem has grown 
+              15% annually, with Cape Town leading innovation.
+            </p>
+          </div>
+        </div>
+    
+        <!-- Colombia + Bangladesh -->
+        <div class="country-row">
+          <div class="country-flag">
+            <img src="All Flag Pictures/Colombia.jpg" alt="Colombia Flag" />
+            <h3>Colombia</h3>
+            <p><strong>Total VC Investment (2023):</strong> $700 million.</p>
+            <p><strong>Main Sectors:</strong> Fintech, agtech.</p>
+            <p>
+              <strong>Growth:</strong> VC activity in Colombia has risen by 30% annually, 
+              supported by government incentives.
+            </p>
+          </div>
+    
+          <div class="country-flag">
+            <img src="All Flag Pictures/Bangladesh.jpg" alt="Bangladesh Flag" />
+            <h3>Bangladesh</h3>
+            <p><strong>Total VC Investment (2023):</strong> $650 million.</p>
+            <p><strong>Main Sectors:</strong> E-commerce, logistics.</p>
+            <p>
+              <strong>Growth:</strong> VC funding in Bangladesh has tripled since 2019, 
+              driven by rapid urbanization and digital adoption.
+            </p>
+          </div>
+        </div>
+      </section>
+    
+      <!-- FOOTER -->
+      <footer>
+        <p>© 2024 Disruptive Capital. All Rights Reserved.</p>
+        <p>Site Design by <a href="https://www.linkedin.com/in/safiyahs" target="_blank" rel="noopener noreferrer">Safiyah Sheikh</a></p>
+        <a href="terms.html">Terms and Conditions</a> | 
+        <a href="cookie.html">Cookie Policy</a>
+      </footer>
     <script>
      
         // Scroll Animation
@@ -337,13 +457,11 @@
             });
         });
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const risingStarsSection = document.getElementById('rising-stars-section');
-            risingStarsSection.classList.add('fade-in');
-        });
-        document.addEventListener('DOMContentLoaded', () => {
-            const risingStarsSection = document.getElementById('special-container');
-            risingStarsSection.classList.add('fade-in');
+        document.addEventListener("DOMContentLoaded", () => {
+            const section = document.getElementById("rising-stars-section");
+            if (section) {
+                section.classList.add("fade-in");
+            }
         });
     </script>
 </body>

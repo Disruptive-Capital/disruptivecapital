@@ -1438,7 +1438,16 @@ body {
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
-
+.whole-container{
+        max-width: 1024px;
+        margin: 40px auto;
+        margin-top:60px ;
+        padding: 40px;
+        background: #ffffff;
+        border-radius: 1px;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+}
 ul {
     padding-left: 20px;
     margin-bottom: 20px;
