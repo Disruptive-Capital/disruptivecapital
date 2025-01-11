@@ -44,16 +44,19 @@
   </header>     
      
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            
-            <h1>Empowering You to Lead in Emerging Markets</h1>
-            <p>Clear insights. Billion-dollar opportunities.</p>
-            <a href="./reports/index.html" class="cta-button">Explore Reports ➔ </a>
-           
-        </div>
-        <div class="hero-content">
-    </section>
+  <section class="hero">
+    <!-- 1) Background images (stacked & absolutely positioned) -->
+    <div class="hero-bg visible" style="background-image: url('images/imgFour.jpg');"></div>
+    <div class="hero-bg" style="background-image: url('images/img2.jpg');"></div>
+    <!-- Add more if you want more than 2 images -->
+
+    <!-- 2) Hero Content Overlay -->
+    <div class="hero-content">
+        <h1>Empowering You to Lead in Emerging Markets</h1>
+        <p>Clear insights. Billion-dollar opportunities.</p>
+        <a href="./reports/index.html" class="cta-button">Explore Reports ➔</a>
+    </div>
+  </section>
 
   
     
@@ -243,6 +246,31 @@
       </div>
     </footer>
     
+    
+
+    <script>
+      // Select all your background divs
+      const backgrounds = document.querySelectorAll('.hero-bg');
+      let currentIndex = 0;
+    
+      // Set how long each image stays visible (milliseconds)
+      const intervalTime = 5000; // 5 seconds
+      
+      // This function handles the crossfade
+      function crossFade() {
+        // Remove .visible from the current image
+        backgrounds[currentIndex].classList.remove('visible');
+        
+        // Move to the next image (loop back to zero if at the end)
+        currentIndex = (currentIndex + 1) % backgrounds.length;
+        
+        // Add .visible to the new current image
+        backgrounds[currentIndex].classList.add('visible');
+      }
+    
+      // Run crossFade on a timer
+      setInterval(crossFade, intervalTime);
+    </script>
     
 
 

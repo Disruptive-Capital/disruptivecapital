@@ -11,10 +11,7 @@
 
   <!-- Main stylesheet and fonts -->
   <link rel="stylesheet" href="../styles.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-    rel="stylesheet"
-  />
+
 
   <style>
     .header {
@@ -141,9 +138,9 @@
 
     .chart-container {
   /* Your existing rules... */
-      margin: 40px auto 20px; /* a bit of bottom margin so text won’t overlap */
+      margin: 40px auto 80px; /* a bit of bottom margin so text won’t overlap */
       position: relative;
-      height: 400px; 
+      height: 450px; 
       box-sizing: border-box;
     }
 
@@ -169,8 +166,8 @@
       }
       /* Slightly smaller chart on tablets */
       .chart-container {
-        height: 300px;
-        margin: 80px auto 90px; /* keep some bottom space too */
+        height: 400px;
+        margin: 80px auto 100px; /* keep some bottom space too */
       }
     }
 
@@ -186,8 +183,8 @@
       }
       /* Even smaller chart on phones */
       .chart-container {
-        height: 250px;
-        margin: 70px auto 90px;
+        height: 400px;
+        margin: 70px auto 100px;
       }
     }
   </style>
@@ -413,19 +410,18 @@
       <div class="chart-container">
         <h2>Global Government Investment in Space Exploration</h2>
         <canvas id="investmentChart"></canvas>
-        <p class="description">
-          This statistic depicts total global government investment in space
-          exploration from 2013 to 2027. It is projected that between 2023 and
-          2027 governments worldwide will invest 93 billion U.S. dollars in
-          space exploration.
-        </p>
       </div>
+      <p class="description">
+        This statistic depicts total global government investment in space
+        exploration from 2013 to 2027. It is projected that between 2023 and
+        2027 governments worldwide will invest 93 billion U.S. dollars in
+        space exploration.
+      </p>
 
       <div class="chart-container">
         <canvas id="investmentTypeChart"></canvas>
       </div>
       <div class="description">
-        <strong>Description:</strong>
         <p>
           This statistic depicts the global government investment on space
           exploration from 2010 to 2019 and gives a projection for 2019 to 2029,
@@ -537,6 +533,7 @@
       options: {
         // Let Chart.js keep default ratio (2:1), so it looks the same as before
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
           legend: {
             display: true,
@@ -672,10 +669,10 @@
         plugins: {
           legend: {
             display: true,
-            position: 'top',
+            position: 'bottom',
             labels: {
               font: {
-                size: 14
+                size: 12
               },
               color: '#1d1d1f'
             }
@@ -757,9 +754,11 @@
               color: '#6e6e73'
             },
             ticks: {
+              autoskip: true,
               color: '#6e6e73',
-              maxRotation: 45,
-              minRotation: 45
+              maxTickLimit: 5,
+              maxRotation: 60,
+              minRotation: 0
             }
           },
           y: {
