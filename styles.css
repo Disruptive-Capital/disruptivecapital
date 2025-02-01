@@ -1598,3 +1598,34 @@ a:hover {
 }
     
 }
+.quotes-section {
+    background-color: #002147;
+    color: white; /* Ensures all text is white */
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .quotes-container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .quote {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-style: italic;
+    color: white; /* Ensures quote text is white */
+  }
+  
+  .quote span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    font-style: normal;
+    color: #f8f8f8; /* Slightly softer white for contrast */
+  }
+  .quotes-section,
+  .quotes-section * {
+    color: white !important;
+  }
+    
