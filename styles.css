@@ -394,6 +394,7 @@ body {
 
 .report-button:hover {
     background-color: #ffffff;
+    color: #002147;
     transform: translateY(-3px);
 }
 
@@ -854,7 +855,7 @@ body {
     padding: 15px 30px;
     font-size: 1.2rem;
     font-weight: bold;
-    color: #000;
+    color: #ffffff;
     background: none; /* Transparent background */
     text-decoration: none;
     position: relative; /* Required for pseudo-elements */
@@ -870,6 +871,7 @@ body {
     bottom: 0;
     width: 0;
     height: 2px; /* Thickness of the underline */
+    color: #002147;
     background-color: #121F32;
     transition: width 0.3s ease-in-out; /* Smooth animation */
 }
@@ -1232,7 +1234,7 @@ body {
     color: #000000;
     text-align: center;
     font-family: "Times New Roman";
-    border-top:  2px solid rgba(141, 141, 141, 0.136); 
+    border-top:  2px solid rgb(255, 255, 255); 
 }
 
 .site-footer p {
@@ -1247,9 +1249,9 @@ body {
     margin: 0 10px;
     padding: 10px 20px;
     font-size: 0.95rem;
-    color: #ffffff;
-    background: #121F32; /* Dark gray for contrast */
-    border: 1px solid #000000;
+    color: #000000;
+    background: #ffffff00; /* Dark gray for contrast */
+
     border-radius: 0px;
     text-decoration: none;
     transition: all 0.3s ease;
@@ -1257,10 +1259,10 @@ body {
 }
 
 .footer-button:hover {
-    background: #bebebe; /* Lighter gray on hover */
+    background: #ffffff00; /* Lighter gray on hover */
     color: #000000;
     transform: translateY(-2px); /* Subtle lift effect */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0);
 }
 
 

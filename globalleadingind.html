@@ -32,13 +32,13 @@
       }
 
       .bar {
-        fill: #000000;
+        fill: #002147;
         transition: fill 0.3s, transform 0.2s;
         cursor: pointer;
       }
 
       .bar:hover {
-        fill: #121f32;
+        fill: #002147;
         transform: scale(1.02);
       }
 
@@ -136,7 +136,8 @@
       // Append axes
       svg.append("g").attr("transform", `translate(0,${height})`).call(xAxis);
 
-      svg.append("g")
+      svg
+        .append("g")
         .attr("class", "axis") // Add class for styling
         .call(yAxis);
 
