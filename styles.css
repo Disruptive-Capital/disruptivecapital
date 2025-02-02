@@ -1628,4 +1628,11 @@ a:hover {
   .quotes-section * {
     color: white !important;
   }
-    
+  .cta-button, .report-button, .archive-button { /* Target all button classes */
+    background-color: #002147; /* Blue background */
+    /* Other existing styles for these buttons should remain in your CSS */
+  }
+  
+  .cta-button:hover, .report-button:hover, .archive-button:hover {
+    background-color: #ffffff; /* Slightly darker blue on hover */
+  }
