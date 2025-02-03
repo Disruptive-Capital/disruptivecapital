@@ -313,23 +313,13 @@
 
 -->
     <!--Footer Component-->
-    <footer class="site-footer">
-      <div class="footer-content">
-        <p>2024 Disruptive Capital. All Rights Reserved.</p>
-        <p>
-          Site Design by
-          <a
-            href="https://www.linkedin.com/in/safiyahs"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Safiyah Sheikh</a
-          >
-        </p>
+    <div id="footer"></div>
+    <script>
+      fetch('footer.html')
+        .then(response => response.text())
+        .then(html => document.getElementById('footer').innerHTML = html);
+    </script>
 
-        <a href="terms.html" class="footer-button">Terms and Conditions</a>
-        <a href="cookie.html" class="footer-button">Cookie Policy</a>
-      </div>
-    </footer>
 
     <script>
       // Select all your background divs
