@@ -13,7 +13,7 @@
         margin: 0;
         padding: 0;
         font-family: "Roboto", sans-serif;
-        background-color: #f9f9f9;
+        background-color: #ffffff;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -25,6 +25,7 @@
         margin: 10px 0;
         font-size: 1.5rem;
         color: #000000;
+        font-family: "Playfair Display", serif; /* Apply Playfair Display font */
       }
 
       svg {
@@ -56,7 +57,7 @@
       /* Apply Playfair Display to y-axis labels and increase font size */
       .axis text {
         font-family: "Playfair Display", serif;
-        font-size: 16px;
+        font-size: 20px;
       }
 
       @media (max-width: 480px) {
@@ -185,15 +186,5 @@
           alert(`Industry: ${d.industry}\nInvestment: $${d.value}B`);
         });
     </script>
-
-    <div class="source-link">
-      Source:
-      <a
-        href="https://dealroom.co/guides/global"
-        target="_blank"
-        rel="noopener noreferrer"
-        >View Source</a
-      >
-    </div>
   </body>
 </html>
