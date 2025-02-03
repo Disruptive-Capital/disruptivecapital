@@ -277,7 +277,7 @@ body {
 
 /* Featured Reports */
 .featured-reports {
-  padding: 80px 40px;
+  padding: 80px -100px;
   text-align: center;
   background: #ffffff;
   border-top: 1px solid #e5e5e5;
@@ -836,9 +836,9 @@ body {
 .archive-button {
   display: inline-block;
   padding: 15px 30px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
-  color: #ffffff;
+  color: #002147; /* font */
   background: none; /* Transparent background */
   text-decoration: none;
   position: relative; /* Required for pseudo-elements */
@@ -855,7 +855,7 @@ body {
   width: 0;
   height: 2px; /* Thickness of the underline */
   color: #002147;
-  background-color: #121f32;
+  background-color: #002147;
   transition: width 0.3s ease-in-out; /* Smooth animation */
 }
 
@@ -864,7 +864,7 @@ body {
 }
 
 .archive-button:hover {
-  color: #121f32; /* Optional: Change text color on hover */
+  color: #002147; /* Optional: Change text color on hover */
 }
 /* Search Bar Container */
 .search-container {
@@ -1620,7 +1620,7 @@ a:hover {
 }
 .cta-button,
 .report-button,
-.archive-button {
+.archive-button-2 {
   /* Target all button classes */
   background-color: #002147; /* Blue background */
   /* Other existing styles for these buttons should remain in your CSS */
@@ -1628,6 +1628,6 @@ a:hover {
 
 .cta-button:hover,
 .report-button:hover,
-.archive-button:hover {
+.archive-button-2:hover {
   background-color: #ffffff; /* Slightly darker blue on hover */
 }
