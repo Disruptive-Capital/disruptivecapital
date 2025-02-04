@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/Navigation Menu/Logos/White DC logo.png" type="image/png" />
+    <link rel="icon" href="./Logos/White_DC_Logo.png" type="image/png" />
     <title>Disruptive Capital</title>
     <style>
       * {
@@ -51,7 +51,7 @@
       .logo-image {
         width: 50px; /* Adjust as needed */
         height: auto;
-        display: block;
+        display: flex;
       }
 
       .logo a {
@@ -227,24 +227,24 @@
       <nav class="logo">
         <a href="index.html">
           <img
-            src="/Navigation Menu/Logos/White DC logo.png"
+            src="./Logos/White_DC_Logo.png"
             alt="Disruptive Capital Logo"
             class="logo-image"
           />
         </a>
         <img
-          src="/Navigation Menu/Logos/Plain Black Letters.png"
+          src="./Logos/Plain_Black_Letters.png"
           alt="Disruptive Capital Text Logo"
           class="text-logo"
         />
       </nav>
-
+    
       <div class="menu-icon" id="menu-icon" onclick="toggleMenu(this)">
         <div></div>
         <div></div>
         <div></div>
       </div>
-
+    
       <nav class="nav" id="nav-menu">
         <div class="dropdown-container">
           <a href="./reports/index.html" class="dropdown">Reports & Insights</a>
