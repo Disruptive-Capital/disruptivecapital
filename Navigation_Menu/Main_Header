@@ -25,7 +25,7 @@
         width: 100%;
         background: #ffffff;
         z-index: 1000;
-        padding: 15px 20px;
+        padding: 30px 20px;
         transition: background-color 0.7s ease;
       }
 
@@ -238,27 +238,26 @@
           class="text-logo"
         />
       </nav>
-    
+
       <div class="menu-icon" id="menu-icon" onclick="toggleMenu(this)">
         <div></div>
         <div></div>
         <div></div>
       </div>
-    
+
       <nav class="nav" id="nav-menu">
+        <a href="./index.html">Home</a>
+        <a href="/reports/index.html">Reports</a>
         <div class="dropdown-container">
-          <a href="./reports/index.html" class="dropdown">Reports & Insights</a>
+          <a href="./reports/index.html" class="dropdown">Insights</a>
           <div class="dropdown-menu">
-            <a href="./risingstars.html"> Emerging Markets</a>
-            <a href="./heatmap.html"> Established Markets</a>
-            <a href="./Menu/Market Assessment.html">Market Assessment</a>
-            <a href="./reports/index.html">Access All</a>
+            <a href="/risingstars.html"> Emerging Markets</a>
+            <a href="/heatmap.html"> Established Markets</a>
+            <a href="/Menu/Market_Assessment.html">Market Assessment</a>
           </div>
         </div>
-        <a href="./index.html">Home</a>
         <a href="./about/index.html">About Us</a>
         <a href="./contact/index.html">Contact</a>
-        <a href="./premium/index.html">Subscribe</a>
       </nav>
     </header>
     <script>
