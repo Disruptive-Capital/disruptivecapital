@@ -1,58 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Website Title</title>
-    <style>
-      .site-footer {
-        background-color: #ffffff;
-        padding: 20px;
-        width: 100%; /* Key change: Footer takes full width */
-        margin-top: 20px;
-      }
-
-      .footer-line {
-        height: 1px;
-        background-color: #000;
-        width: 100%; /* Line also takes full width */
-        margin-bottom: 10px;
-      }
-
-      .footer-content {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between; /* Or flex-start, center, etc. */
-        align-items: center;
-        max-width: 1200px; /* Optional: Set a max width for content */
-        margin: 0 auto; /* Optional: Center the content */
-      }
-
-      .footer-content p,
-      .footer-content a,
-      .footer-content svg {
-        margin: 5px 10px;
-      }
-
-      .footer-content svg {
-        width: 22px;
-        height: 22px;
-      }
-
-      .footer-button {
-        text-decoration: none;
-        color: black;
-      }
-
-      @media (max-width: 768px) {
-        .footer-content {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-      }
-    </style>
-  </head>
-  <body>
+class dcFooter extends HTMLElement{
+    connectedCallback(){
+        this.innerHTML = `
+          <body>
     <footer class="site-footer">
       <div class="footer-line"></div>
       <div class="footer-content">
@@ -65,6 +14,12 @@
             rel="noopener noreferrer"
             >Safiyah Sheikh</a
           >
+          and 
+          <a
+            href="https://www.linkedin.com/in/james-hamilton-499514293/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >James Hamilton</a>
         </p>
 
         <a href="terms.html" class="footer-button">Terms and Conditions</a>
@@ -103,4 +58,8 @@
       </div>
     </footer>
   </body>
-</html>
+        `
+    }
+}
+
+customElements.define('dc-footer', dcFooter)

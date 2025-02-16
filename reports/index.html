@@ -1,56 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reports & Insights | Disruptive Capital</title>
     <link rel="stylesheet" href="../styles.css">
     <script src="../scripts.js" defer></script>
+    <script src="/Components/Header.js"></script>
+    <script src="/Components/Footer.js"></script>
+    <style>
+        .chart-container {
+            width: 90%;
+            margin: auto;
+            margin-top: 5px;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .chart-container.visible {
+            opacity: 1;
+        }
+        body {
+            height: 2000px; /* Maintain scrolling functionality */
+        }
+    </style>
 </head>
 <body>
-    <header class="header">
-      <nav class="logo">
-        <a href="../index.html"><img src="../images/dclogo.png" alt="Disruptive Capital Logo"></a>
-        <a href="../index.html"><h4>Disruptive Capital</h4></a>
-      </nav>
-
-
-      <div class="menu-icon" id="menu-icon" onclick="toggleMenu(this)">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    
-
-      <nav class="nav" id="nav-menu">
-        <div class="dropdown-container">
-            <a href="../reports/index.html" class="dropdown">Reports & Insights</a>
-            <div class="dropdown-menu">
-                <a href="../risingstars.html">Emerging Markets</a>
-                <a href="../heatmap.html">Established Markets</a>
-                <a href="./index.html">Access All</a>
-            </div>
-        </div>
-          <a href="../index.html">Home</a>
-          <a href="../about/index.html">About Us</a>
-          <a href="../contact/index.html">Contact</a>
-          <a href="../premium/index.html">Subscribe</a>
-      </nav>
-    </header>
-
+    <dc-header></dc-header>
 
     <!-- Reports Section -->
     <section id="reports" class="featured-reports">
         <h2>Reports Archive</h2>
-    
+
         <!-- Search Bar and Category Filter -->
         <div class="search-container">
-            <input 
-                type="text" 
-                id="reportSearch" 
-                placeholder="Search reports by title or description..." 
-            />
+            <input type="text" id="reportSearch" placeholder="Search reports by title or description...">
             <select id="categoryFilter" class="search-button">
                 <option value="">All Categories</option>
                 <option value="tech">Tech</option>
@@ -58,246 +41,144 @@
                 <option value="urban">Urban</option>
             </select>
         </div>
-    
+
         <!-- Reports Grid -->
         <div class="report-grid">
-          <div class="report-card" data-category="tech">
-            <img src="../images/AIinfra.png" alt="Report 2">
-            <h3>Powering the Future: Opportunities in AI Infrastructure
-            </h3>
-            <p>November 2024 |
-              Disruptive Capital Insight Report
-              </p>
-            <a href="../articles/AIInfrastructure.html" class="report-button">Read Report</a>
-        </div>
+            <div class="report-card" data-category="tech">
+                <img src="../images/AIinfra.png" alt="AI Infrastructure Report">
+                <h3>Powering the Future: Opportunities in AI Infrastructure</h3>
+                <p>November 2024 | Disruptive Capital Insight Report</p>
+                <a href="../articles/AIInfrastructure.html" class="report-button">Read Report</a>
+            </div>
 
-        <div class="report-card">
-          <img src="../images/space.png" alt="Report 5">
-          <h3>Beyond Earth: Opportunities in the Emerging Space Industry</h3>
-          <p>November 2024 |
-            Disruptive Capital Insight Report
-            </p>
-          <a href="../articles/spaceInd.html" class="report-button">Read Report</a>
-      </div>
-
+            <div class="report-card">
+                <img src="../images/space.png" alt="Space Industry Report">
+                <h3>Beyond Earth: Opportunities in the Emerging Space Industry</h3>
+                <p>November 2024 | Disruptive Capital Insight Report</p>
+                <a href="../articles/spaceInd.html" class="report-button">Read Report</a>
+            </div>
 
             <div class="report-card" data-category="tech">
-                <img src="../images/quantumcomp.png">
-                <h3>Quantum Computing: The Next Frontier in Technological Transformation
-                </h3>
-                <p>November 2024 |
-                  Disruptive Capital Insight Report
-                  </p>
+                <img src="../images/quantumcomp.png" alt="Quantum Computing Report">
+                <h3>Quantum Computing: The Next Frontier in Technological Transformation</h3>
+                <p>November 2024 | Disruptive Capital Insight Report</p>
                 <a href="../articles/quantumrep.html" class="report-button">Read Report</a>
             </div>
-            
-
 
             <div class="report-card" data-category="energy">
-                <img src="../images/GreenHydro.png" alt="Report 3">
-                <h3>Fueling the Future: Opportunities in 
-                  Green Hydrogen Production
-                  </h3>
-                <p>November 2024 |
-                  Disruptive Capital Insight Report
-                  </p>
+                <img src="../images/GreenHydro.png" alt="Green Hydrogen Report">
+                <h3>Fueling the Future: Opportunities in Green Hydrogen Production</h3>
+                <p>November 2024 | Disruptive Capital Insight Report</p>
                 <a href="../articles/GreenHydrogen.html" class="report-button">Read Report</a>
             </div>
 
+            <div class="report-card" data-category="tech">
+                <img src="../images/semicond.png" alt="Semiconductor Report">
+                <h3>Forging the Future: Opportunities in Semiconductor Manufacturing</h3>
+                <p>November 2024 | Disruptive Capital Insight Report</p>
+                <a href="../articles/semiconductorrep.html" class="report-button">Read Report</a>
+            </div>
+
+            <div class="report-card" data-category="urban">
+                <img src="../images/advmaterial.png" alt="Advanced Materials Report">
+                <h3>Building the Future: Opportunities in Advanced Materials – Graphene and 2D Materials</h3>
+                <p>November 2024 | Disruptive Capital Insight Report</p>
+                <a href="../articles/advmaterialrep.html" class="report-button">Read Report</a>
+            </div>
+
+            <div class="report-card" data-category="urban">
+                <img src="../images/vertfarm.png" alt="Vertical Farming Report">
+                <h3>Growing the Future: Opportunities in Vertical Farming and AgriTech</h3>
+                <p>November 2024 | Disruptive Capital Insight Report</p>
+                <a href="../articles/verticalfarm.html" class="report-button">Read Report</a>
+            </div>
+
+            <div class="report-card" data-category="urban">
+                <img src="../images/synthbio.png" alt="Synthetic Biology Report">
+                <h3>Engineering Life: Opportunities in Synthetic Biology</h3>
+                <p>November 2024 | Disruptive Capital Insight Report</p>
+                <a href="../articles/synthbiorep.html" class="report-button">Read Report</a>
+            </div>
 
             <div class="report-card" data-category="tech">
-              <img src="../images/semicond.png" alt="Report 4">
-              <h3>Forging the Future: Opportunities in Semiconductor Manufacturing</h3>
-              <p>November 2024 |
-                Disruptive Capital Insight Report
-                </p>
-              <a href="../articles/semiconductorrep.html" class="report-button">Read Report</a>
-          </div>
-
-        <div class="report-card" data-category="urban">
-          <img src="../images/advmaterial.png" alt="Report 3">
-          <h3>Building the Future: Opportunities in Advanced Materials – Graphene and 2D Materials
-          </h3>
-          <p>November 2024 |
-            Disruptive Capital Insight Report
-            </p>
-          <a href="../articles/advmaterialrep.html" class="report-button">Read Report</a>
-      </div>
-      <div class="report-card" data-category="urban">
-        <img src="../images/vertfarm.png" alt="Report 3">
-        <h3>Growing the Future: Opportunities in Vertical Farming and AgriTech
-        </h3>
-        <p>November 2024 |
-          Disruptive Capital Insight Report
-          </p>
-        <a href="../articles/verticalfarm.html" class="report-button">Read Report</a>
-    </div>
-
-
-      <div class="report-card" data-category="urban">
-        <img src="../images/synthbio.png" alt="Report 3">
-        <h3>Engineering Life: Opportunities in Synthetic Biology
-        </h3>
-        <p>November 2024 |
-          Disruptive Capital Insight Report
-          </p>
-        <a href="../articles/synthbiorep.html" class="report-button">Read Report</a>
-    </div>
-
-
-    <div class="report-card" data-category="tech">
-      <img src="../images/smarttext.png" alt="Report 3">
-      <h3>Woven Innovation: Opportunities in Smart Textiles and Wearable Tech</h3>
-      <p>November 2024 |
-        Disruptive Capital Insight Report
-        </p>
-      <a href="../articles/fitness.html" class="report-button">Read Report</a>
-  </div>
-  
-
+                <img src="../images/smarttext.png" alt="Smart Textiles Report">
+                <h3>Woven Innovation: Opportunities in Smart Textiles and Wearable Tech</h3>
+                <p>November 2024 | Disruptive Capital Insight Report</p>
+                <a href="../articles/fitness.html" class="report-button">Read Report</a>
+            </div>
         </div>
 
-        
-   <!-- Page Content -->
-   <div class="container">
-    <h3>Established & Emerging VC Countries</h3>
-    <p>Discover the countries transforming the global VC landscape. These rising stars are home to booming industries and skyrocketing investment opportunities, shaping the future of innovation and entrepreneurship.
-    </p>
-    <br>
+        <!-- Additional Content -->
+        <div class="container">
+            <h3>Established & Emerging VC Countries</h3>
+            <p>Discover the countries transforming the global VC landscape. These rising stars are home to booming industries and skyrocketing investment opportunities, shaping the future of innovation and entrepreneurship.</p>
+            <br>
+            <a href="../risingstars.html" class="button-link">View Rising Stars</a>
+        </div>
 
-
-  <a href="../risingstars.html" class="button-link">View Rising Stars</a>
-</div>
-
+        <!-- Chart Container 
+        <div class="chart-container">
+            <canvas id="vcChart"></canvas>
+        </div>-->
     </section>
 
-    
-    
+    <dc-footer></dc-footer>
 
-    <title>Global Total VC Invested</title>
+    <!---- Chart Scripts 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-      body {
-        height: 2000px; /* Add height to enable scrolling */
-      }
-      .chart-container {
-        width: 90%;
-        margin: auto;
-        margin-top: 5px; /* Adjust placement */
-        opacity: 0;
-        transition: opacity 1s ease-in-out;
-      }
-      .chart-container.visible {
-        opacity: 1;
-      }
-    </style>
-  </head>
-  <body>
-  
-    <footer class="site-footer">
-      <div class="footer-content">
-        <p> 2024 Disruptive Capital. All Rights Reserved.</p>
-        <p> Site Design by <a href="https://www.linkedin.com/in/safiyahs" target="_blank" rel="noopener noreferrer">Safiyah Sheikh</a></p>
-
-        <a href="../terms.html" class="footer-button">Terms and Conditions</a>
-        <a href="../cookie.html" class="footer-button">Cookie Policy</a>
-      </div>
-    </footer>
-
-
     <script>
-      // Chart data and configuration
-      const data = {
-        labels: ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
-        datasets: [
-          {
-            label: 'VC Amount Raised',
-            data: [123, 191.6, 189.1, 234.6, 346.2, 322.8, 344.4, 722.3, 514.7, 326.1, 320.2],
-            backgroundColor: [
-              'rgba(54, 162, 235, 0.6)', // Blue for the VC amount
-            ],
-            borderColor: [
-              'rgba(54, 162, 235, 1)',
-            ],
-            borderWidth: 1
-          },
-          {
-            label: 'Projection',
-            data: [null, null, null, null, null, null, null, null, null, null, 320.2],
-            backgroundColor: [
-              'rgba(201, 203, 207, 0.6)' // Grey for projections
-            ],
-            borderColor: [
-              'rgba(201, 203, 207, 1)',
-            ],
-            borderWidth: 1
-          }
-        ]
-      };
-  
-      const options = {
-        responsive: true,
-        plugins: {
-          legend: {
-            position: 'top',
-          },
-          title: {
-            display: true,
-            text: 'Global Total VC Invested (incl. 2024 projection)'
-          }
-        },
-        animation: {
-          duration: 2000, // 2 seconds for the animation
-          easing: 'easeOutBounce', // Adds a bounce effect
-        },
-        scales: {
-          y: {
-            beginAtZero: true,
-            ticks: {
-              callback: function (value) {
-                return `$${value}B`; // Add the B suffix to the y-axis labels
-              }
+        // Chart data and configuration
+        const data = {
+            labels: ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
+            datasets: [{
+                label: 'VC Amount Raised',
+                data: [123, 191.6, 189.1, 234.6, 346.2, 322.8, 344.4, 722.3, 514.7, 326.1, 320.2],
+                backgroundColor: ['rgba(54, 162, 235, 0.6)'],
+                borderColor: ['rgba(54, 162, 235, 1)'],
+                borderWidth: 1
+            }, {
+                label: 'Projection',
+                data: [null, null, null, null, null, null, null, null, null, null, 320.2],
+                backgroundColor: ['rgba(201, 203, 207, 0.6)'],
+                borderColor: ['rgba(201, 203, 207, 1)'],
+                borderWidth: 1
+            }]
+        };
+
+        const options = {
+            responsive: true,
+            plugins: {
+                legend: { position: 'top' },
+                title: { display: true, text: 'Global Total VC Invested (incl. 2024 projection)' }
+            },
+            animation: {
+                duration: 2000,
+                easing: 'easeOutBounce',
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: { callback: value => `$${value}B` }
+                }
             }
-          }
-        }
-      };
-  
-      let chartInitialized = false; // Flag to ensure the chart initializes only once
-  
-      const createChart = () => {
-        const ctx = document.getElementById('vcChart').getContext('2d');
-        new Chart(ctx, {
-          type: 'bar',
-          data: data,
-          options: options
-        });
-      };
-  
-      // Intersection Observer to detect when the chart container is in view
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting && !chartInitialized) {
-            entry.target.classList.add('visible'); // Make the chart visible
-            createChart(); // Initialize the chart
-            chartInitialized = true; // Prevent re-initialization
-          }
-        });
-      }, {
-        threshold: 0.2 // Trigger when 50% of the container is visible
-      });
-  
-      // Attach observer to the chart container
-      const chartContainer = document.querySelector('.chart-container');
-      observer.observe(chartContainer);
-    </script>
+        };
 
-    
-  
+        let chartInitialized = false;
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !chartInitialized) {
+                    entry.target.classList.add('visible');
+                    new Chart(document.getElementById('vcChart').getContext('2d'), {
+                        type: 'bar',
+                        data: data,
+                        options: options
+                    });
+                    chartInitialized = true;
+                }
+            });
+        }, { threshold: 0.2 });
 
-
-
-
-    
+        observer.observe(document.querySelector('.chart-container'));
+    </script>   ---> 
 </body>
 </html>
-
