@@ -14,6 +14,8 @@
   <title>Disruptive Capital</title>
   <link rel="stylesheet" href="./styles.css">
   <script src="./scripts.js" defer></script>
+  <script src="/Components/Header.js"></script>
+  <script src="/Components/Footer.js"></script>
 
   <style>
     /* ========== GENERAL STYLES ========== */
@@ -71,17 +73,7 @@
     }
 
     /* ========== HEADER & NAV ========== */
-    .header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: #fff;
-      padding: 20px 40px;
-      border-bottom: 1px solid #e5e5e5;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
+    
     .logo {
       display: flex;
       align-items: center;
@@ -223,39 +215,6 @@
       color: #121F32;
     }
 
-    /* FOOTER */
-    .site-footer {
-      padding: 20px;
-      background: #ffffff;
-      text-align: center;
-      border-top: 1px solid #e0e0e0;
-      font-size: 1rem;
-      color: #000000;
-    }
-    .footer-content a {
-      color: #000;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-    .footer-button {
-      display: inline-block;
-      margin: 0 10px;
-      padding: 10px 20px;
-      font-size: 0.95rem;
-      color: #ffffff;
-      background: #121F32;
-      border: 1px solid #000000;
-      border-radius: 0px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-    .footer-button:hover {
-      background: #bebebe;
-      color: #000000;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-
     /* RESPONSIVE */
     @media (max-width: 768px) {
       .nav {
@@ -275,33 +234,7 @@
 <body>
 
   <!-- HEADER -->
-  <header class="header">
-    <nav class="logo">
-      <a href="../index.html"><img src="../images/dclogo.png" alt="Disruptive Capital Logo"></a>
-      <a href="../index.html"><h4>Disruptive Capital</h4></a>
-    </nav>
-    <!-- Hamburger Menu Icon (Visible on Mobile Only) -->
-    <div class="menu-icon" id="menu-icon" onclick="toggleMenu(this)">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <!-- Navigation Menu -->
-    <nav class="nav" id="nav-menu">
-      <div class="dropdown-container">
-        <a href="./reports/index.html" class="dropdown">Reports & Insights</a>
-        <div class="dropdown-menu">
-          <a href="./risingstars.html">Emerging Markets</a>
-          <a href="./heatmap.html">Established Markets</a>
-          <a href="./reports/index.html">Access All</a>
-        </div>
-      </div>
-      <a href="./index.html">Home</a>
-      <a href="./about/index.html">About Us</a>
-      <a href="./contact/index.html">Contact</a>
-      <a href="./premium/index.html">Subscribe</a>
-    </nav>
-  </header>
+  <dc-header></dc-header>
 
   <!-- HEATMAP TITLE/SUBTITLE -->
   <h2>Top Countries - VC Investment Per Capita 2024</h2>
@@ -321,7 +254,7 @@
   <section>
     <div class="country-row">
       <div class="country-flag">
-        <img src="All Flag Pictures/United States.jpg" alt="US Flag" />
+        <img src="TempFlags/USA.png" alt="US Flag" />
         <h2>United States</h2>
         <p><span>Total VC Investment (2023):</span> <strong>$153.1 billion</strong></p>
         <p><span>Main Sectors:</span> Technology, healthcare, fintech, and AI.  In recent years, AI alone saw over $25 billion in funding.</p>
@@ -329,7 +262,7 @@
       </div>
 
       <div class="country-flag">
-        <img src="All Flag Pictures/China.jpg" alt="china Flag" />
+        <img src="TempFlags/China.png" alt="china Flag" />
         <h2>China</h2>
         <p><span>Total VC Investment (2023):</span> <strong>$54.7 billion</strong></p>
         <p><span>Main Sectors:</span> E-commerce, green energy, and AI, with electric vehicle startups receiving $5 billion in funding.</p>
@@ -342,7 +275,7 @@
   <section>
     <div class="country-row">
       <div class="country-flag">
-        <img src="All Flag Pictures/India.jpg" alt="India Flag" />
+        <img src="TempFlags/india.png" alt="India Flag" />
         <h2>India</h2>
         <p><span>Total VC Investment (2023):</span> <strong>$11.5 billion</strong></p>
         <p><span>Main Sectors:</span>Fintech, e-commerce, and edtech. Fintech companies like Razorpay saw investments exceeding $1 billion.</p>
@@ -350,7 +283,7 @@
       </div>
 
       <div class="country-flag">
-        <img src="All Flag Pictures/united-kingdom-2405963_1280.png" alt="UK Flag" />
+        <img src="TempFlags/UK.png" alt="UK Flag" />
         <h2>United Kingdom</h2>
           <p><span>Total VC Investment (2023):</span> <strong>$19.7 billion</strong></p>
           <p><span>Main Sectors:</span>  Fintech, health tech, and AI, with fintech accounting for 40% of investments.</p>
@@ -363,7 +296,7 @@
   <section>
     <div class="country-row">
       <div class="country-flag">
-        <img src="All Flag Pictures/France.jpg" alt="France Flag" />
+        <img src="TempFlags/France.png" alt="France Flag" />
         <h2>France</h2>
           <p><span>Total VC Investment (2023):</span> <strong>$9.4 billion</strong></p>
           <p><span>Main Sectors:</span> AI, SaaS, and green energy.  Paris startups alone raised $4 billion in 2023.</p>
@@ -371,7 +304,7 @@
       </div>
 
       <div class="country-flag">
-        <img src="All Flag Pictures/South Korea.jpg" alt="South Korea Flag" />
+        <img src="TempFlags/South_Korea.png" alt="South Korea Flag" />
         <h2>South Korea</h2>
           <p><span>Total VC Investment (2023):</span> <strong>$8.9 billion</strong></p>
           <p><span>Main Sectors:</span> Electronics, gaming, and AI.</p>
@@ -384,7 +317,7 @@
   <section>
     <div class="country-row">
       <div class="country-flag">
-        <img src="All Flag Pictures/Germany.jpg" alt="Germany Flag" />
+        <img src="TempFlags/Germany.png" alt="Germany Flag" />
         <h2>Germany</h2>
           <p><span>Total VC Investment (2023):</span> <strong>$8 billion</strong></p>
           <p><span>Main Sectors:</span> Automotive innovation, deep tech, and green energy, with Berlin leading in software solutions and mobility startups.</p>
@@ -392,7 +325,7 @@
       </div>
 
       <div class="country-flag">
-        <img src="All Flag Pictures/Canada.jpg" alt="Canada Flag" />
+        <img src="TempFlags/Canada.png" alt="Canada Flag" />
         <h2>Canada</h2>
           <p><span>Total VC Investment (2023):</span> <strong>$6.7 billion</strong></p>
           <p><span>Main Sectors:</span> AI, clean energy, and digital health</p>
@@ -405,7 +338,7 @@
   <section>
     <div class="country-row">
       <div class="country-flag">
-        <img src="All Flag Pictures/Singapore.jpg" alt="Singapore flag" />
+        <img src="TempFlags/singapore.png" alt="Singapore flag" />
         <h2>Singapore</h2>
           <p><span>Total VC Investment (2023):</span> <strong>$5.8 billion</strong></p>
           <p><span>Main Sectors:</span> Fintech and logistics</p>
@@ -413,7 +346,7 @@
         </div>
 
       <div class="country-flag">
-        <img src="All Flag Pictures/Sweden.jpg" alt="Sweden Flag" />
+        <img src="TempFlags/Sweden.png" alt="Sweden Flag" />
         <h2>Sweden</h2>
           <p><span>Total VC Investment (2023):</span> <strong>$5 billion</strong></p>
           <p><span>Main Sectors:</span> Green energy and tech startups.</p>
@@ -426,7 +359,7 @@
   <section>
     <div class="country-row">
       <div class="country-flag">
-        <img src="All Flag Pictures/Japan.png" alt="Japan Flag" />
+        <img src="TempFlags/Japan.png" alt="Japan Flag" />
         <h2>Japan</h2>
           <p><span>Total VC Investment (2023):</span> <strong>$4.8 billion</strong></p>
           <p><span>Main Sectors:</span> Robotics, AI, and health tech</p>
@@ -434,7 +367,7 @@
       </div>
 
       <div class="country-flag">
-        <img src="All Flag Pictures/Isreal.jpg" alt="Isreal Flag" />
+        <img src="TempFlags/isreal.png" alt="Isreal Flag" />
         <h2>Israel</h2>
           <p><span>Total VC Investment (2023):</span> <strong>$4.4 billion</strong></p>
           <p><span>Main Sectors:</span>  Cybersecurity, AI, and health tech, with cybersecurity attracting $1.2 billion.</p>
@@ -444,19 +377,7 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="footer-content">
-      <p> 2024 Disruptive Capital. All Rights Reserved.</p>
-      <p>
-        Site Design by 
-        <a href="https://www.linkedin.com/in/safiyahs" target="_blank" rel="noopener noreferrer">
-          Safiyah Sheikh
-        </a>
-      </p>
-      <a href="terms.html" class="footer-button">Terms and Conditions</a>
-      <a href="cookie.html" class="footer-button">Cookie Policy</a>
-    </div>
-  </footer>
+  <dc-footer></dc-footer>
 
   <script>
     // ========== MAP INTERACTION ==========
