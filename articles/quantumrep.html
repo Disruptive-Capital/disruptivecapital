@@ -6,8 +6,10 @@
   <title>Quantum Computing Report</title>
 
   <!-- Your scripts and styles -->
-  <script src="../scripts.js"></script>
+  <script src="../scripts.js" defer ></script>
   <link rel="stylesheet" href="../styles.css">
+  <script src="/Components/Header.js" defer ></script>
+  <script src="/Components/articleFooter.js" defer ></script>
 
   <!-- Load Chart.js once -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -16,14 +18,6 @@
 
 
   <style>
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #fff;
-      font-family: inherit;
-    }
 
     /* Dark blue background + white text (original scheme) */
     .start {
@@ -445,6 +439,7 @@
         <p><strong>Take the first step—partner with us today.</strong></p>
       </section>
     </main>
+    <dc-article-footer></dc-article-footer>
 
   <script>
     // Quantum Graph setup
@@ -521,6 +516,5 @@
     });
   </script>
 
-  <script src="./components/Header.js"></script>
 </body>
 </html>

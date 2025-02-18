@@ -7,21 +7,16 @@
 
   <!-- Chart.js + your scripts -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="../scripts.js"></script>
+  <script src="../scripts.js" defer ></script>
+  <script src="/Components/articleFooter.js" defer></script>
+  <script src="/Components/Header.js" defer></script>
 
   <!-- Main stylesheet + Google Fonts -->
   <link rel="stylesheet" href="../styles.css" />
 
 
   <style>
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #fff;
-      font-family: inherit;
-    }
+
 
     /* Dark blue background + white text */
     .start {
@@ -320,11 +315,7 @@
       </section>
     </main>
 
-  <footer>
-    <p>
-      Discover more disruptive insights with <strong>Disruptive Capital</strong>.
-    </p>
-  </footer>
+  <dc-article-footer></dc-article-footer>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -380,6 +371,5 @@
     });
   </script>
 
-  <script src="./components/Header.js"></script>
 </body>
 </html>

@@ -7,22 +7,14 @@
 
   <!-- Chart.js + your scripts -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="../scripts.js"></script>
-
+  <script src="../scripts.js" defer ></script>
   <!-- Main stylesheet + Google Fonts -->
   <link rel="stylesheet" href="../styles.css" />
+  <script src="/Components/Header.js"></script>
+  <script src="/Components/articleFooter.js"></script>
 
 
   <style>
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #fff;
-      font-family: inherit;
-    }
-
     /* Dark blue background + white text (original scheme) */
     .start {
       background-color: #002147;
@@ -462,6 +454,7 @@
         <p><strong>Take the first step—partner with us today.</strong></p>
       </section>
     </main>
+    <dc-article-footer></dc-article-footer>
 
   <script>
     // Funding and Market Growth Chart
@@ -570,6 +563,5 @@
     });
   </script>
 
-  <script src="./components/Header.js"></script>
 </body>
 </html>

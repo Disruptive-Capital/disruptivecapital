@@ -7,21 +7,14 @@
   
   <!-- D3 and your scripts -->
   <script src="https://d3js.org/d3.v7.min.js"></script>
-  <script src="../scripts.js"></script>
+  <script src="../scripts.js" defer ></script>
+  <script src="/Components/Header.js"></script>
+  <script src="/Components/articleFooter.js"></script>
 
 
   <link rel="stylesheet" href="../styles.css" />
 
   <style>
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #fff;
-      font-family: inherit;
-    }
-
     /* Dark blue background + white text (original scheme) */
     .start {
       background-color: #002147;
@@ -495,6 +488,7 @@
         <p><strong>Take the first step—partner with us today.</strong></p>
       </section>
     </main>
+    <dc-article-footer></dc-article-footer>
 
   <!-- D3 Scripts for Charts -->
   <script>
@@ -804,6 +798,5 @@
   </script>
 
   <!-- Custom header component script -->
-  <script src="./components/Header.js"></script>
 </body>
 </html>

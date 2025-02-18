@@ -7,21 +7,15 @@
 
   <!-- Chart.js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="../scripts.js"></script>
+  <script src="../scripts.js" defer ></script>
+  <script src="/Components/Header.js" defer ></script>
+  <script src="/Components/articleFooter.js" defer ></script>
 
   <!-- Main stylesheet and fonts -->
   <link rel="stylesheet" href="../styles.css" />
 
 
   <style>
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #fff;
-      font-family: inherit;
-    }
 
     /* Dark blue background + white text (original scheme) */
     .start {
@@ -515,6 +509,7 @@
         <p><strong>Take the first step—partner with us today.</strong></p>
       </section>
     </main>
+    <dc-article-footer></dc-article-footer>
 
   <!-- Chart.js Scripts -->
   <script>
@@ -742,6 +737,5 @@
     });
   </script>
 
-  <script src="./components/Header.js"></script>
 </body>
 </html>

@@ -5,17 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quantum Computing Report</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="../scripts.js"></script>
+    <script src="../scripts.js" defer ></script>
     <link rel="stylesheet" href="../styles.css">
+    <script src="/Components/Header.js"></script>
+    <script src="/Components/articleFooter.js"></script>
+
     <style>
-      .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 20px;
-        background-color: #fff;
-        font-family: inherit;
-      }
   
       /* Dark blue background + white text (original scheme) */
       .start {
@@ -296,6 +291,7 @@
             <p><strong>Take the first step—partner with us today.</strong></p>
         </section>        
     </main>
+    <dc-article-footer></dc-article-footer>
 
     <script>
         const ctx = document.getElementById('revenueChart').getContext('2d');
@@ -374,7 +370,6 @@
             revealSections(); // Initial check
         });
     </script>
-    <script src="./components/Header.js"></script>
     
 
 </body>
